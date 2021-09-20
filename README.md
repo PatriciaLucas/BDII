@@ -22,10 +22,11 @@ BIBLIOGRAFIA COMPLEMENTAR:
 ### **Cronograma para aulas em formato ANP**  
 
 - 00_Introducao: Introdução à disciplina.
-- 01_ModeloER: Modelagem usando o modelo Entidade-Relacionamento.
-- 02_ModeloEER: Modelo Entidade-Relacionamento Estendido.
-- 03_Mapeamento: Mapeamento ER e EER para relacional.
-- 04_Concorrencia: Controle de concorrência.
-- 05_Transacoes: Processamento de transações.
-- 06_Recuperacao: Recuperação de falhas.
-- 07_Distribuicao: Sistemas de banco de dados distribuídos.
+- 01_ModeloER
+    - 1.1_ModeloER: Modelagem usando o modelo Entidade-Relacionamento.
+    - 1.2_ModeloEER: Modelo Entidade-Relacionamento Estendido.
+    - 1.3_Mapeamento: Mapeamento ER e EER para relacional.
+- 02_Concorrencia: Controle de concorrência.
+- 03_Transacoes: Processamento de transações.
+- 04_Recuperacao: Recuperação de falhas.
+- 05_Distribuicao: Sistemas de banco de dados distribuídos.
