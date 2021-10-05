@@ -50,8 +50,7 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 
 %==================================
 
-\begin{ftst}{Restrições sobre relacionamentos ternários
-(ou de grau mais alto)}{Modelo Entidade-Relacionamento}
+\begin{ftst}{Subclasses, superclasses e herança}{Modelo Entidade-Relacionamento Estendido}
 \begin{itemize}
     \item Notação:
 \end{itemize}
@@ -276,7 +275,22 @@ membro de no máximo uma das subclasses da especialização.
     \item Uma categoria pode ser \textbf{total} ou \textbf{parcial}. 
     \item Uma \textbf{categoria total} mantém a união de todas as entidades em suas superclasses, enquanto a \textbf{parcial} pode manter um subconjunto da união. 
     \item Notação: uma categoria total é representada em diagrama por uma linha dupla que conecta a categoria e o círculo, ao passo que uma categoria parcial é indicada por uma linha simples.
+    \item Se uma categoria é total (não parcial), ela pode ser
+    representada alternativamente como uma especialização total.
+    \item Se as duas classes representam o mesmo tipo de entidades e compartilham diversos atributos, incluindo os mesmos atributos-chave, a especialização/generalização é preferida. Caso contrário, a categorização (tipo de união) é mais apropriada.
+
 \end{itemize}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Modelagem dos tipos UNIÃO usando categorias}{Modelo Entidade-Relacionamento Estendido}
+\vone
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.12]{Figuras/02_06.png}
+\end{figure}
+
 \end{ftst}
 
 
