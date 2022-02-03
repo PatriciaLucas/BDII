@@ -54,7 +54,9 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 \small
 \vone
 O Modelo Entidade-Relacionamento (MER) é um modelo de dados de alto-nível criado com o objetivo de representar a semântica associada aos dados do minimundo.
-\vone
+\vone 
+20
+
 O MER é utilizado para na fase de projeto conceitual, onde o esquema conceitual do
 banco de dados da aplicação é concebido.
 \vone
@@ -536,6 +538,36 @@ cardinalidade} e \textbf{participação}.
     \item Padronize o DER, use, por exemplo: entidades e relacionamentos são escritos com letras maiúsculas, os nomes dos atributos têm apenas a letra inicial maiúscula e os nomes do papel são escritos com letras minúsculas.
     \item Como uma prática geral, dada uma descrição narrativa dos requisitos do banco de dados, os substantivos que aparecem na narrativa tendem a gerar nomes de entidades, e os verbos tendem a indicar nomes de relacionamentos. 
 \end{itemize}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Praticando}{Modelo Entidade-Relacionamento}
+
+Nesse exercício vamos modelar os dados de uma livraria. Use os requisitos abaixo para criar um diagrama entidade-relacionamento completo e legível.
+\vone
+\begin{itemize}
+    \item Precisamos manter informações dos livros disponíveis para a venda. Para cada livro deve ser armazenado seu ISBN, título, idioma e ano de lançamento, o(s) autor(es) e a editora.
+    \item Para os autores é mantido o nome, data de nascimento, país de origem e uma breve nota biográfica.
+    \ite Cada livro é escrito por um ou mais autores e para um mesmo autor podem existir vários livros cadastrados.
+    \item Um autor pode estar incluído no cadastro mesmo que não exista um livro seu para venda.
+    
+\end{itemize}
+
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Praticando}{Modelo Entidade-Relacionamento}
+
+
+\begin{itemize}
+    \item A livraria mantém também um cadastro de editoras que deve conter o nome, razão social, endereço (rua, número, bairro e cidade) e telefones de contato.
+    \item Uma editora pode estar cadastrada mesmo quando não existam livros editados por ela em venda.
+    \item Para um mesmo livro podem existir várias edições publicadas em anos distintos.
+    \item Cada edição deverá ter um número, preço de venda, número de páginas e quantidade de exemplares em estoque.
+\end{itemize}
+
 \end{ftst}
 
 \end{document}

@@ -1,43 +1,132 @@
-\documentclass[t]{beamer}
+\documentclass[a4paper]{scrartcl}
 
-% Load general definitions
-\input{preamble.tex}
+\usepackage[english]{babel}
+\usepackage[dvips]{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsbsy}
+\usepackage{amsgen}
+\usepackage{amscd}
+\usepackage{amsopn}
+\usepackage{amstext}
+\usepackage{amsxtra}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage[all,cmtip]{xy}
+\usepackage{accents}
+\usepackage{sseq}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{amsthm}
+\usepackage{tkz-fct}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
 
-% Specific definitions
-\title[]{Banco de dados II}
-\subtitle[]{Processamento de transações}
-\author[]{Patrícia Lucas\\{\footnotesize }}
-\institute{Bacharelado em Sistemas de Informação \\ IFNMG  - Campus Salinas}
-\date{\scriptsize Salinas\\Agosto 2021}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\setlength{\parindent}{0em}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{obs}{Instruções}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+\theoremstyle{definition}
+\newtheorem{df}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{exc}{Exercício}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{digr}[thm]{Digression}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{sol}[thm]{Solution}
+
+%\selectlanguage{english}
+\DeclareMathOperator{\Tr}{Tr}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{\mathbb{T}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\tr}{\mathrm{tr}}
+
+%math titles bold
+%\makeatletter
+%\g@addto@macro\bfseries{\boldmath}
+%\makeatother
+
+\title{\vspace{-2cm}NOTAS DAS AULAS DE TRANSAÇÃO \\ Banco de Dados II\vspace{-1.5cm}}
+\author{}\date{}
 
 \begin{document}
+\maketitle
 
-% cover page
-\setbeamertemplate{footline}{}
-\begin{frame}
+\textbf{Propriedades desejáveis das transações:}
+\begin{enumerate}
+    \item Atomicidade:
+    \item Consistência preservada:
+    \item Isolamento:
+    \item Durabilidade ou permanência:
+\end{enumerate}
 
-\begin{center}
-\includegraphics[width=.15\textwidth]{}
-\end{center}
-  \titlepage
-  \begin{tikzpicture}[remember picture,overlay]
-  \node[anchor=south east,xshift=-5pt,yshift=5pt] at (current page.south east) {\tiny Versão 1.2021};
-  \node[anchor=south west,yshift=0pt] at (current page.south west) {\includegraphics[width=.25\textwidth]{Logos/salinas_horizontal_jpg.jpg}};
-  \end{tikzpicture}  
-\end{frame}
+\textbf{Problemas que podemos encontrar quando duas transações são executadas simultaneamente:}
+\begin{enumerate}
+    \item Atualização perdida:
+    \item Atualização temporária ou leitura suja:
+    \item Resumo incorreto:
+    \item Leitura não repetitiva:
+\end{enumerate}
 
-% Main slides
+\textbf{Schedule recuperável:}\\
 
-\begin{ftst}{Referência}{Modelo Entidade-Relacionamento Estendido}
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.4]{Figuras/book.jpg}
-\end{figure}
-ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pearson Addison Wesley, 2019.
-\end{ftst}
+Exemplo: $r_1(X); w_1(X); r_2(X); r_1(Y); w_2(X); c_2; c_1;$
 
+\textbf{Schedule sem cascata:}\\
 
-%==================================
 
 
 
