@@ -587,4 +587,28 @@ Nesse exercício vamos modelar os dados de um sistema bancários. Use os requisi
 Para cada agência deseja-se armazenar seu número, cidade e seus funcionários. Dos funcionários devem ser armazenados: nome, endereço (rua, número, bairro e cidade), código, salário e telefones de contato. Cada cliente cadastrado em uma agência específica pode possuir várias contas bancárias.Para os clientes deseja-se armazenar o nome, o RG e a cidade na qual residem, além de suas contas bancárias. Dados importantes para as contas dos clientes da agência são o número da conta, o saldo e as informações sobre suas transações associadas a cada conta: número, data e valor.
 \end{ftst}
 
+%==================================
+
+\begin{ftst}{Praticando 4}{Modelo Entidade-Relacionamento}
+Nesse exercício vamos modelar os dados de uma agência de financiamento de projetos de pesquisa. Use os requisitos abaixo para criar um diagrama entidade-relacionamento completo e legível.
+\vone
+\small
+\begin{itemize}
+    \item Para cada projeto são cadastrados: um código interno, título, duração do projeto, instituição onde será realizado e área de pesquisa. As áreas de pesquisa estão predefinidas e para cada uma delas são cadastrados código, nome, descrição e um índice que indica sua relevância econômica. 
+    \vone
+    \item Para cada pesquisador solicitante são cadastrados RG, CPF, nome, sexo, data de nascimento, grau científico e instituição onde foi alcançado esse título. Note-se que um mesmo pesquisador pode ter vários projetos em análise. Um pesquisador é cadastrado no sistema unicamente quando o primeiro dos seus projetos é submetido.
+\end{itemize}
+
+\end{ftst}
+
+\begin{ftst}{Praticando 4}{Modelo Entidade-Relacionamento}
+\small
+\begin{itemize}
+    \item A agência recebe os projetos submetidos pelos pesquisadores e associa cada um destes a um avaliador que deve aprovar ou não o financiamento. Para estes avaliadores são cadastrados RG, CPF, nome, sexo, data de nascimento, grau científico, instituição onde trabalha e as áreas de pesquisa (anteriormente citadas) nas quais tem capacidade de avaliar os projetos.
+    \vone
+    \item Um avaliador pode ser cadastrado no sistema mesmo sem ter analisado nenhum projeto. Quando um projeto é enviado a um avaliador para análise, é cadastrada pelo sistema a data deste envio. Posteriormente, quando o avaliador retorna sua avaliação, são também cadastrados a data de resposta e o resultado (se foi aprovado ou não o projeto).
+\end{itemize}
+\end{ftst}
+
+
 \end{document}
