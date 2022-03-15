@@ -28,7 +28,7 @@
 
 % Main slides
 
-\begin{ftst}{Referência}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Referência}{Mapeamento ER para relacional}
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{Figuras/book.jpg}
@@ -38,7 +38,7 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 
 %==================================
 
-\begin{ftst}{Algoritmo de mapeamento ER para relacional}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Algoritmo de mapeamento ER para relacional}{Mapeamento ER para relacional}
 \begin{figure}
     \centering
     \includegraphics[scale=0.12]{Figuras/03_01.png}
@@ -47,7 +47,7 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 
 %==================================
 
-\begin{ftst}{Exemplo de DER}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Exemplo de DER}{Mapeamento ER para relacional}
 \begin{figure}
     \centering
     \includegraphics[scale=0.11]{Figuras/03_02.png}
@@ -56,7 +56,7 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 
 %==================================
 
-\begin{ftst}{Etapa 1: entidade regular}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 1: entidade regular}{Mapeamento ER para relacional}
 \begin{itemize}
     \item Para cada tipo de entidade regular (forte) E no esquema ER, crie uma relação R que inclua todos os atributos simples de E.
     \item Inclua apenas os atributos de componente simples de um atributo composto.
@@ -68,7 +68,7 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 
 %==================================
 
-\begin{ftst}{Etapa 1: entidade regular}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 1: entidade regular}{Mapeamento ER para relacional}
 \vone
 \begin{figure}
     \centering
@@ -78,7 +78,7 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 
 %==================================
 
-\begin{ftst}{Etapa 2: entidade fraca}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 2: entidade fraca}{Mapeamento ER para relacional}
 \small
 \begin{itemize}
     \item Para cada tipo de entidade fraca F no esquema ER com tipo de entidade proprietária E, crie uma relação R e inclua todos os atributos simples (ou componentes simples dos atributos compostos).
@@ -92,7 +92,7 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 
 %==================================
 
-\begin{ftst}{Etapa 2: entidade fraca}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 2: entidade fraca}{Mapeamento ER para relacional}
 \vone
 \vone
 \begin{figure}
@@ -103,7 +103,7 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
 
 %==================================
 
-\begin{ftst}{Técnicas para mapear relacionamentos}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Técnicas para mapear relacionamentos}{Mapeamento ER para relacional}
 A técnica da chave estrangeira:
 \footnotesize
 \begin{itemize}
@@ -118,7 +118,7 @@ A técnica da chave estrangeira:
 
 %==================================
 
-\begin{ftst}{Técnicas para mapear relacionamentos}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Técnicas para mapear relacionamentos}{Mapeamento ER para relacional}
 A técnica de relação de referência cruzada ou relacionamento:
 \footnotesize
 \begin{itemize}
@@ -135,7 +135,7 @@ A técnica de relação de referência cruzada ou relacionamento:
 
 %==================================
 
-\begin{ftst}{Técnicas para mapear relacionamentos}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Técnicas para mapear relacionamentos}{Mapeamento ER para relacional}
 A técnica de relação combinada:
 \footnotesize
 \begin{itemize}
@@ -148,7 +148,7 @@ A técnica de relação combinada:
 
 %==================================
 
-\begin{ftst}{Etapa 3: relacionamento binário 1:1}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 3: relacionamento binário 1:1}{Mapeamento ER para relacional}
 \begin{itemize}
     \item É possível usar as 3 técnicas, mas a técnica de chave estrangeira é a mais útil e deve ser seguida, a menos que haja condições especiais.
 \end{itemize}
@@ -161,7 +161,7 @@ A técnica de relação combinada:
 
 %==================================
 
-\begin{ftst}{Etapa 4: relacionamento binário 1:N}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 4: relacionamento binário 1:N}{Mapeamento ER para relacional}
 \small
 \begin{itemize}
     \item Existem duas técnicas possíveis: a técnica de chave estrangeira e a técnica de relação de referência cruzada ou relacionamento. 
@@ -175,7 +175,7 @@ A técnica de relação combinada:
 
 %==================================
 
-\begin{ftst}{Etapa 5: relacionamento binário M:N}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 5: relacionamento binário M:N}{Mapeamento ER para relacional}
 \small
 \begin{itemize}
     \item A única operação para relacionamentos M:N é a opção de relação de relacionamento.
@@ -188,7 +188,7 @@ A técnica de relação combinada:
 
 %==================================
 
-\begin{ftst}{Etapa 6: mapeamento de atributos multivalorados}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 6: mapeamento de atributos multivalorados}{Mapeamento ER para relacional}
 \begin{itemize}
     \item Para cada atributo multivalorado $A$, crie uma nova relação $R$.
     \item Essa relação $R$ incluirá um atributo correspondente a $A$, mais o atributo da chave primária $Ch$ de $A$ como chave estrangeira.
@@ -204,7 +204,7 @@ A técnica de relação combinada:
 
 %==================================
 
-\begin{ftst}{Etapa 7: mapeamento de relacionamento n-ário}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 7: mapeamento de relacionamento n-ário}{Mapeamento ER para relacional}
 \small
 \begin{itemize}
     \item Usamos a opção de relação de relacionamento.
@@ -218,7 +218,7 @@ A técnica de relação combinada:
 
 %==================================
 
-\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Mapeamento ER para relacional}
 \small
 São 4 opções:
 \begin{itemize}
@@ -231,7 +231,7 @@ São 4 opções:
 
 %==================================
 
-\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Mapeamento ER para relacional}
 \small
 Para a opção 1: tabela única.
 \begin{itemize}
@@ -247,7 +247,7 @@ Para a opção 1: tabela única.
 
 %==================================
 
-\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Mapeamento ER para relacional}
 \small
 Para a opção 2: tabela única.
 \begin{itemize}
@@ -263,7 +263,7 @@ Para a opção 2: tabela única.
 
 %==================================
 
-\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Mapeamento ER para relacional}
 \small
 Para a opção 3: uma tabela para cada subclasse e superclasse.
 \begin{itemize}
@@ -278,7 +278,7 @@ Para a opção 3: uma tabela para cada subclasse e superclasse.
 
 %==================================
 
-\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 8: mapeamento da especialização ou generalização}{Mapeamento ER para relacional}
 \small
 Para a opção 4: uma tabela para cada subclasse.
 \begin{itemize}
@@ -294,7 +294,7 @@ Para a opção 4: uma tabela para cada subclasse.
 
 %==================================
 
-\begin{ftst}{Mapeamento de subclasses compartilhadas (herança múltipla)}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Mapeamento de subclasses compartilhadas (herança múltipla)}{Mapeamento ER para relacional}
 \small
 Pode ser usada qualquer uma das opções apresentadas na Etapa 8.
 
@@ -303,7 +303,7 @@ Pode ser usada qualquer uma das opções apresentadas na Etapa 8.
 
 %==================================
 
-\begin{ftst}{Etapa 9: mapeamento de categorias (tipos de união)}{Modelo Entidade-Relacionamento Estendido}
+\begin{ftst}{Etapa 9: mapeamento de categorias (tipos de união)}{Mapeamento ER para relacional}
 \small
 \begin{itemize}
     \item Crie uma tabela para a entidade que representa a união.
@@ -314,6 +314,56 @@ Pode ser usada qualquer uma das opções apresentadas na Etapa 8.
 \begin{figure}
     \centering
     \includegraphics[scale=0.11]{Figuras/03_17.png}
+\end{figure}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Praticando 1}{Mapeamento ER para relacional}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{Praticando_figuras/1.jpg}
+\end{figure}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Praticando 2}{Mapeamento ER para relacional}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{Praticando_figuras/2.jpg}
+\end{figure}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Praticando 3}{Mapeamento ER para relacional}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{Praticando_figuras/3.jpg}
+\end{figure}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Praticando 4}{Mapeamento ER para relacional}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{Praticando_figuras/4.jpg}
+\end{figure}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Praticando 5}{Mapeamento ER para relacional}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{Praticando_figuras/5.jpg}
 \end{figure}
 \end{ftst}
 
