@@ -56,8 +56,8 @@ ELMASRI, R.; NAVATHE, S. B. Sistemas de Banco de Dados. 7. ed. São Paulo: Pears
     \item Uma transação que não consegue concluir sua execução deverá ter uma instrução ABORT como sua última operação. O ABORT solicita ao SGBD que desfaça as operações.
     \item Notação simplificada para escalonamento:
     \begin{itemize}
-        \item $r_i(X)$: read_item(X) na transação $T_i$.
-        \item $w_i(X)$: write_item(X) na transação $T_i$.
+        \item $r_i(X)$: read\_item(X) na transação $T_i$.
+        \item $w_i(X)$: write\_item(X) na transação $T_i$.
         \item $c_i$: commit na transação $T_i$.
         \item $a_i$: abort na transação $T_i$.
     \end{itemize}
@@ -225,7 +225,199 @@ write\_item(Q) & write\_item(Q) & Sim               \\ \hline
 
 \end{ftst}
 
+%==================================
 
+\begin{ftst}{Seriabilidade por conflito}{Escalonamento de Transações}
+\textbf{Exemplo:} os escalonamentos $S_a$ e $S_b$ são equivalentes por conflito?
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.13]{Figuras_transacoes/15.png}
+\end{figure}
+\small
+Sim. Pois as operações read\_item(A) e write\_item(A) em $T_2$ podem ser trocadas com read\_item(B) e write\_item(B), já que essas operações não são conflitantes. Dessa forma, $S_a$ é serializável por conflito.
+
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Seriabilidade por conflito}{Escalonamento de Transações}
+\textbf{Exemplo:} existe um escalonamento serial que seja equivalente por conflito ao escalonamento abaixo?
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.13]{Figuras_transacoes/16.png}
+\end{figure}
+
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Seriabilidade por conflito}{Escalonamento de Transações}
+\textbf{Exemplo:} existe um escalonamento serial que seja equivalente por conflito ao escalonamento abaixo?
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.13]{Figuras_transacoes/16.png}
+\end{figure}
+\small
+Não, pois todas as operações são conflitantes. Portanto, esse escalonamento não é serializável por conflito.
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Teste de seriabilidade}{Escalonamento de Transações}
+
+\begin{itemize}
+    \item Um escalonamento é serializável por conflito se o seu grafo de precedência for acíclico.
+    \item Se o grafo de precedência for acíclico, a ordem de seriabilidade pode ser obtida por uma ordenação topológica do grafo.
+    \item Um grafo de precedência é um grafo dirigido onde:
+    \begin{itemize}
+        \item Os vértice são as transações.
+        \item Existe um arco de $T_i$ para $T_j$ se elas são conflitantes e $T_i$ acessou primeiro o item de dados onde o conflito surgiu.
+    \end{itemize}
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.13]{Figuras_transacoes/17.png}
+\end{figure}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Teste de seriabilidade}{Escalonamento de Transações}
+
+\begin{itemize}
+    \item Exemplos: os escalonamentos $S_a$ e $S_b$ são serializáveis?
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.13]{Figuras_transacoes/18.png}
+\end{figure}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Teste de seriabilidade}{Escalonamento de Transações}
+
+\begin{itemize}
+    \item Exemplos: os escalonamentos $S_a$ e $S_b$ são serializáveis?
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.11]{Figuras_transacoes/19.png}
+\end{figure}
+Portanto, $S_a$ não é serializável e $S_b$ é serializável.
+
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Teste de seriabilidade}{Escalonamento de Transações}
+
+\begin{itemize}
+    \item Outro exemplo: o escalonamento $S$ é serializável? 
+    \item Se sim, apresente os escalonamentos seriais equivalentes.
+    \item $S: r_3(Y); r_3(Z); r_1(X); w_1(X); w_3(Y); w_3(Z); r_2(Z); r_1(Y);$ 
+    $w_1(Y); r_2(Y); w_2(Y); r_2(X); w_2(X);$
+\end{itemize}
+
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Teste de seriabilidade}{Escalonamento de Transações}
+
+\begin{itemize}
+    \item Outro exemplo: o escalonamento $S$ é serializável? 
+    \item Se sim, apresente os escalonamentos seriais equivalentes.
+    \item $S: r_3(Y); r_3(Z); r_1(X); w_1(X); w_3(Y); w_3(Z); r_2(Z); r_1(Y);
+    $ $w_1(Y); r_2(Y); w_2(Y); r_2(X); w_2(X);$
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.11]{Figuras_transacoes/22.png}
+\end{figure}
+
+
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Escalonamentos recuperáveis}{Escalonamento de Transações}
+
+\begin{itemize}
+    \item Um escalonamento é recuperável se:
+    \begin{itemize}
+        \item nenhuma transação T em um escalonamento S for confirmada (commit) até que todas as transações T´ que tiverem gravado algum item X que T lê sejam confirmadas (commit).
+        \item Exemplo de escalonamento não-recuperável:
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.15]{Figuras_transacoes/20.png}
+            \end{figure}
+        \item Por que esse escalonamento não pode ser recuperado?
+    \end{itemize}
+\end{itemize}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Escalonamentos recuperáveis}{Escalonamento de Transações}
+
+\begin{itemize}
+    \item Verifique se os escalonamentos $S_1$ e $S_2$ são recuperáveis:
+    \vone
+    \begin{itemize}
+        \item $S_1 = r_1(X); w_1(X); r_1(Y); w_1(Y); r_2(X); w_2(X); c_1; c_2;$
+        \vone
+        \item $S_2 = r_1(X); w_1(X); r_2(X); c_2; r_1(Y); a_1;$
+    \end{itemize}
+\end{itemize}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Escalonamentos recuperáveis}{Escalonamento de Transações}
+\small
+\begin{itemize}
+    \item Rollback em cascata: uma falha em uma única transação pode levar a uma série de Rollback de outras transações.
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.12]{Figuras_transacoes/21.png}
+    \end{figure}
+\end{itemize}
+\begin{itemize}
+    \item Abortar $T_2$ e $T_3$ é aceitável, pois essas transações ainda não foram confirmadas. 
+    \item Em um escalonamento recuperável, nenhuma transação confirmada precisa ser cancelada e portanto, a definição da transação confirmada como durável não é violada.
+\end{itemize}
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Escalonamentos recuperáveis}{Escalonamento de Transações}
+\begin{itemize}
+    \item Para evitar Rollback em cascata, cada transação de um escalonamento deve ler \textbf{apenas} itens que foram gravados por transações confirmadas.
+    \item Exemplo: $S = r_1(X); w_1(X); r_1(Y); w_1(Y); c_1; r_2(X); w_2(X); c_2;$
+    \vone
+    \item Um escalonamento que evita Rollback em cascata, também é recuperável.
+    \item É desejável que tenhamos apenas escalonamentos que evitam Rollback em cascata.
+\end{itemize}
+
+\end{ftst}
+
+%==================================
+
+\begin{ftst}{Escalonamentos recuperáveis}{Escalonamento de Transações}
+\begin{itemize}
+    \item O SGBD deve fornecer mecanismos que garantam que todos os escalonamentos possíveis sejam:
+    \begin{itemize}
+        \item Serializáveis.
+        \item Recuperáveis.
+        \item Preferencialmente sem rollback em cascata.
+    \end{itemize}
+\end{itemize}
+
+\end{ftst}
 
 
 \end{document}
